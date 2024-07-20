@@ -5,7 +5,7 @@ date: "2024-07-20"
 output: github_document
 ---
 ```{r}
-setwd("/Users/rachellemay/Desktop/star_u_analyses")
+setwd("/Users/rachellemay/Desktop/star_u_analyses/APOE_1_analysis")
 wmh_dat <- read.csv("/Users/rachellemay/Desktop/star_u_analyses/ABCDS_APOE_df.csv")
 wmh_dat
 
@@ -14,7 +14,6 @@ wmh_dat
 ```{r}
 head(wmh_dat)
 str(wmh_dat)
-fertilizer_dat$plantGrowth <- as.factor(fertilizer_dat$plantGrowth)
 ```
 
 ```{r}
