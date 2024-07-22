@@ -7,14 +7,11 @@ output: github_document
 ```{r}
 setwd("/Users/rachellemay/Desktop/star_u_analyses/APOE_1_analysis")
 wmh_dat <- read.csv("/Users/rachellemay/Desktop/star_u_analyses/ABCDS_APOE_df.csv")
-wmh_dat
 
 ```
 
-```{r}
 head(wmh_dat)
 str(wmh_dat)
-```
 
 ```{r}
 library(tidyverse)
@@ -25,8 +22,16 @@ library(effectsize)
 options(max.print = 10000)
 ```
 
+
 ```{r}
 dplyr::filter(wmh_dat, grepl('E4', allele_combo), !grepl('E2/E4', allele_combo), !grepl('E4/E2', allele_combo))
 ## so there's 72 pple w/ E4 total but excluding those carrying E2 w E4 bc that could confound results
+```
+
+```{r}
+as.table(wmh_dat)
+plot(lm( Sum.ROI ~ allele_combo,
+         (dplyr::filter(wmh_dat, grepl('E4', allele_combo), !grepl('E2/E4', allele_combo), !grepl('E4/E2', allele_combo))),
+         data = wmh_dat),which=2)
 ```
 
